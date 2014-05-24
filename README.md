@@ -7,7 +7,7 @@ Pretty simple with `Composer`, add to `composer.json` file:
 
     {
         "require": {
-            "bw/active-menu-item-bundle": "~1.0"
+            "bw/active-menu-item-bundle": "~1.1"
         }
     }
 
