@@ -1,0 +1,64 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    <style>
+        .current.active > a {
+            color: #148B14;
+        }
+        .active > a {
+            color: #AD3737;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>BWActiveMenuItemBundle</h1>
+    <p>
+        This is a demo page of <i>BWActiveMenuItemBundle</i> with simple example of usage. <br/>
+        Do <b>not</b> include this router file in production!
+    </p>
+
+    <div>
+        Code of this demo page in:
+        <pre>BWActiveMenuItemBundle:Demo:index.html.twig</pre>
+    </div>
+
+    <h2>Demo Simple HTML Menu</h2>
+    <ul>
+        <li class="{{ 'bw_active_menu_item_index'|is_active_route }}">
+            <a href="{{ path('bw_active_menu_item_index') }}">Home</a>
+        </li>
+        <li class="{{ is_active_route([
+            'bw_active_menu_item_video',
+            'bw_active_menu_item_tragedy',
+            'bw_active_menu_item_comedy',
+            'bw_active_menu_item_tragicomedy',
+            'bw_active_menu_item_audio',
+        ], 'bw_active_menu_item_catalog') }}">
+            <a href="{{ path('bw_active_menu_item_catalog') }}">Catalog</a>
+            <ul>
+                <li class="{{ is_active_route([
+                    'bw_active_menu_item_tragedy',
+                    'bw_active_menu_item_comedy',
+                    'bw_active_menu_item_tragicomedy',
+                ], 'bw_active_menu_item_video') }}">
+                    <a href="{{ path('bw_active_menu_item_video') }}">Video</a>
+                    <ul>
+                        <li class="{{ 'bw_active_menu_item_tragedy'|is_active_route }}">
+                            <a href="{{ path('bw_active_menu_item_tragedy') }}">Tragedy</a>
+                        </li>
+                        <li class="{{ 'bw_active_menu_item_comedy'|is_active_route }}">
+                            <a href="{{ path('bw_active_menu_item_comedy') }}">Comedy</a>
+                        </li>
+                        <li class="{{ 'bw_active_menu_item_tragicomedy'|is_active_route }}">
+                            <a href="{{ path('bw_active_menu_item_tragicomedy') }}">Tragicomedy</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="{{ 'bw_active_menu_item_audio'|is_active_route }}">
+                    <a href="{{ path('bw_active_menu_item_audio') }}">Audio</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+{% endblock %}

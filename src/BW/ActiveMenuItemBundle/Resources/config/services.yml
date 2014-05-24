@@ -1,0 +1,13 @@
+parameters:
+#    bw_active_menu_item.example.class: BW\ActiveMenuItemBundle\Example
+
+services:
+#    bw_active_menu_item.example:
+#        class: %bw_active_menu_item.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    bw_active_menu_item.twig.bw_extension:
+        class: BW\ActiveMenuItemBundle\Twig\BWExtension
+        arguments: ["@service_container"]
+        tags:
+            - { name: twig.extension }
