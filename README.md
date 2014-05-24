@@ -1,4 +1,4 @@
 ActiveMenuItemBundle
 ====================
 
-The active menu item highlighter of simple HTML menu for Symfony framework
+The active menu item highlight of simple HTML menu for Symfony framework
