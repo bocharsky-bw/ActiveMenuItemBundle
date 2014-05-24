@@ -37,7 +37,7 @@ class BWExtension extends \Twig_Extension
     {
         return array(
             new \Twig_SimpleFunction('is_active', array($this, 'isActiveFunction')),
-            new \Twig_SimpleFunction('is_active_route', array($this, 'isActiveRouteFunction')),
+            new \Twig_SimpleFunction('is_active_uri', array($this, 'isActiveUriFunction')),
         );
     }
 
@@ -45,19 +45,19 @@ class BWExtension extends \Twig_Extension
     {
         return array(
             new \Twig_SimpleFilter('is_active', array($this, 'isActiveFilter')),
-            new \Twig_SimpleFilter('is_active_route', array($this, 'isActiveRouteFilter')),
+            new \Twig_SimpleFilter('is_active_uri', array($this, 'isActiveUriFilter')),
         );
     }
 
     /**
      * Check the active menu item by request URI
-     *     Example: {{ path('route')|is_active }}
+     *     Example: {{ path('route')|is_active_uri }}
      *
      * @param string $requestUri The request URI
      *
      * @return string Empty string or "active current" string
      */
-    public function isActiveFilter($requestUri)
+    public function isActiveUriFilter($requestUri)
     {
         $isActive = false;
 
@@ -73,14 +73,14 @@ class BWExtension extends \Twig_Extension
 
     /**
      * Check the active menu item by array of possible request URIs
-     *     Example: {{ is_active([path('route_1'), path('route_2'), path('route_3')]) }}
+     *     Example: {{ is_active_uri([path('route_1'), path('route_2'), path('route_3')]) }}
      *
      * @param array $requestUriArray The array of possible request URIs
      * @param null|string $currentRequestUri The request URI of current menu item
      *
      * @return string The empty string or "active" string
      */
-    public function isActiveFunction(array $requestUriArray, $currentRequestUri = null)
+    public function isActiveUriFunction(array $requestUriArray, $currentRequestUri = null)
     {
         $isCurrent = false;
         $isActive = false;
@@ -113,13 +113,13 @@ class BWExtension extends \Twig_Extension
 
     /**
      * Check the active menu item by route name
-     *     Example: {{ 'route'|is_active_route }}
+     *     Example: {{ 'route'|is_active }}
      *
      * @param string $route The route name
      *
      * @return string Empty string or "active current" string
      */
-    public function isActiveRouteFilter($route)
+    public function isActiveFilter($route)
     {
         $isActive = false;
 
@@ -135,14 +135,14 @@ class BWExtension extends \Twig_Extension
 
     /**
      * Check active menu item by array of possible route names
-     *     Example: {{ is_active_route(['route_1', 'route_2', 'route_3']) }}
+     *     Example: {{ is_active(['route_1', 'route_2', 'route_3']) }}
      *
      * @param array $routes The array of possible route names
      * @param null|string $currentRoute The request URI of current menu item
      *
      * @return string Empty string or "active" string
      */
-    public function isActiveRouteFunction(array $routes, $currentRoute = null)
+    public function isActiveFunction(array $routes, $currentRoute = null)
     {
         $isCurrent = false;
         $isActive = false;
