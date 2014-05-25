@@ -21,7 +21,7 @@ in `app/AppKernel.php`:
     {
         $bundles = array(
             // other bundles...
-            new \BW\ActiveMenuItemBundle\BWActiveMenuItemBundle(),
+            new BW\ActiveMenuItemBundle\BWActiveMenuItemBundle(),
         );
 
 ## How to use
