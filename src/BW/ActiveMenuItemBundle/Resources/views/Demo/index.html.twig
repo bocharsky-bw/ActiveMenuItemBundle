@@ -25,10 +25,10 @@
 
     <h2>Demo Simple HTML Menu</h2>
     <ul>
-        <li class="{{ 'bw_active_menu_item_index'|is_active_route }}">
+        <li class="{{ 'bw_active_menu_item_index'|is_active }}">
             <a href="{{ path('bw_active_menu_item_index') }}">Home</a>
         </li>
-        <li class="{{ is_active_route([
+        <li class="{{ is_active([
             'bw_active_menu_item_video',
             'bw_active_menu_item_tragedy',
             'bw_active_menu_item_comedy',
@@ -37,25 +37,25 @@
         ], 'bw_active_menu_item_catalog') }}">
             <a href="{{ path('bw_active_menu_item_catalog') }}">Catalog</a>
             <ul>
-                <li class="{{ is_active_route([
+                <li class="{{ is_active([
                     'bw_active_menu_item_tragedy',
                     'bw_active_menu_item_comedy',
                     'bw_active_menu_item_tragicomedy',
                 ], 'bw_active_menu_item_video') }}">
                     <a href="{{ path('bw_active_menu_item_video') }}">Video</a>
                     <ul>
-                        <li class="{{ 'bw_active_menu_item_tragedy'|is_active_route }}">
+                        <li class="{{ 'bw_active_menu_item_tragedy'|is_active }}">
                             <a href="{{ path('bw_active_menu_item_tragedy') }}">Tragedy</a>
                         </li>
-                        <li class="{{ 'bw_active_menu_item_comedy'|is_active_route }}">
+                        <li class="{{ 'bw_active_menu_item_comedy'|is_active }}">
                             <a href="{{ path('bw_active_menu_item_comedy') }}">Comedy</a>
                         </li>
-                        <li class="{{ 'bw_active_menu_item_tragicomedy'|is_active_route }}">
+                        <li class="{{ 'bw_active_menu_item_tragicomedy'|is_active }}">
                             <a href="{{ path('bw_active_menu_item_tragicomedy') }}">Tragicomedy</a>
                         </li>
                     </ul>
                 </li>
-                <li class="{{ 'bw_active_menu_item_audio'|is_active_route }}">
+                <li class="{{ 'bw_active_menu_item_audio'|is_active }}">
                     <a href="{{ path('bw_active_menu_item_audio') }}">Audio</a>
                 </li>
             </ul>

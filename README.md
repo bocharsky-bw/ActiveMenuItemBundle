@@ -13,7 +13,7 @@ Pretty simple with `Composer`, add to `composer.json` file:
 
 and run `$ composer update` command.
 
-## How to include 
+### How to include 
 To use filters and functions in `Twig`, register `BWActiveMenuItemBundle` 
 in `app/AppKernel.php`: 
 
@@ -35,7 +35,7 @@ or use `is_active_uri` twig filter for check whether menu item request URI is ac
 
 If route or request URI is match, filters return `current active` string.
 
-### How to use with submenu
+### How to use with multilevel menu
 To check array of possible routes use `is_active` function, 
 passed array of routes (all submenu item routes of current item) 
 as a first parameter and the current item route as a second parameter. 
@@ -63,6 +63,17 @@ If the current route is `subcategory1`, it has `current active` class
 and them parent item with `all_categories` route has only `active` class.
 
 And same for request URIs with `is_active_uri` function.
+
+## Demo page
+Bundle has demo page with example of simple multilevel HTML menu.
+Add to `app/config/routing_dev.yml` file: 
+
+    bw_active_menu_item:
+        resource: "@BWActiveMenuItemBundle/Resources/config/routing.yml"
+        prefix:   /bw/demo/active-menu-item
+ 
+Run built in server `php app/console server:run` and demo page will be available
+at `http://localhost:8000/bw/demo/active-menu-item/index`.
  
 ## Under the hood
 There are only [few][1] additional simple `Twig` filters and functions for use.

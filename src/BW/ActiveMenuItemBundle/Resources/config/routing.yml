@@ -1,27 +1,27 @@
 bw_active_menu_item_index:
-    pattern:  /bw/demo/active-menu-item/index
+    pattern:  /index
     defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
 
 bw_active_menu_item_catalog:
-    pattern:  /bw/demo/active-menu-item/catalog
+    pattern:  /catalog
     defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
 
 bw_active_menu_item_video:
-    pattern:  /bw/demo/active-menu-item/catalog/video
+    pattern:  /catalog/video
     defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
 
 bw_active_menu_item_tragedy:
-    pattern:  /bw/demo/active-menu-item/catalog/video/tragedy
+    pattern:  /catalog/video/tragedy
     defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
 
 bw_active_menu_item_comedy:
-    pattern:  /bw/demo/active-menu-item/catalog/video/comedy
+    pattern:  /catalog/video/comedy
     defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
 
 bw_active_menu_item_tragicomedy:
-    pattern:  /bw/demo/active-menu-item/catalog/video/tragicomedy
+    pattern:  /catalog/video/tragicomedy
     defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
 
 bw_active_menu_item_audio:
-    pattern:  /bw/demo/active-menu-item/catalog/audio
+    pattern:  /catalog/audio
     defaults: { _controller: BWActiveMenuItemBundle:Demo:index }
