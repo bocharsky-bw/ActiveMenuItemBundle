@@ -2,16 +2,10 @@
 
 namespace BW\ActiveMenuItemBundle\Twig;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class BWExtension extends \Twig_Extension
 {
-    /**
-     * @var \Symfony\Component\DependencyInjection\ContainerInterface The service container
-     */
-    protected $container;
-
     /**
      * @var \Symfony\Component\HttpFoundation\Request
      */
@@ -19,12 +13,9 @@ class BWExtension extends \Twig_Extension
 
     /**
      * Constructor
-     * 
-     * @param \Symfony\Component\DependencyInjection\ContainerInterface $container
      */
-    public function __construct(ContainerInterface $container)
+    public function __construct()
     {
-        $this->container = $container;
         $this->request = Request::createFromGlobals();
     }
 

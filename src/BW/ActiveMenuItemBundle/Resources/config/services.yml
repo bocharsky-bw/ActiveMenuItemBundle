@@ -8,6 +8,6 @@ services:
 
     bw_active_menu_item.twig.bw_extension:
         class: BW\ActiveMenuItemBundle\Twig\BWExtension
-        arguments: ["@service_container"]
+        arguments: []
         tags:
             - { name: twig.extension }
