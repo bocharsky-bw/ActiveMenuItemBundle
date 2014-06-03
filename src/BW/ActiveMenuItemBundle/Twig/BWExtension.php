@@ -3,6 +3,7 @@
 namespace BW\ActiveMenuItemBundle\Twig;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 class BWExtension extends \Twig_Extension
 {
@@ -24,7 +25,7 @@ class BWExtension extends \Twig_Extension
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
-        $this->request = $this->container->get('request');
+        $this->request = Request::createFromGlobals();
     }
 
 
