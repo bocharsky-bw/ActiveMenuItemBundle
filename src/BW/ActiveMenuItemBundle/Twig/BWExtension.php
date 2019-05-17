@@ -3,6 +3,7 @@
 namespace BW\ActiveMenuItemBundle\Twig;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class BWExtension extends \Twig_Extension
 {
@@ -13,10 +14,12 @@ class BWExtension extends \Twig_Extension
 
     /**
      * Constructor
+     *
+     * @param RequestStack $requestStack
      */
-    public function __construct()
+    public function __construct(RequestStack $requestStack)
     {
-        $this->request = Request::createFromGlobals();
+        $this->request = $requestStack->getCurrentRequest();
     }
 
 
