@@ -27,13 +27,13 @@ return [
 To check whether menu item route is active, simply use `is_active` Twig filter:
 
 ```twig
-{{ path('route_name')|is_active }}
+{{ 'route_name'|is_active }}
 ````
 
-or use `is_active_uri` Twig filter for check whether menu item request URI is active:
+Or use `is_active_uri` Twig filter for check if menu item's request URI is active:
 
 ```twig
-{{ 'route_name'|is_active_uri }}
+{{ path('route_name')|is_active_uri }}
 ```
 
 If route or request URI is match, filters return `current active` string.
@@ -49,26 +49,27 @@ For example, there are simple HTML menu with submenu:
 ```html
 <ul>
     <li class="{{ is_active([
-        'subcategory1',
-        'subcategory2',
+        'subcategory1_route_name',
+        'subcategory2_route_name',
     ], 'all_categories') }}">
         <a href="{{ path('all_categories') }}">All categories</a>
         <ul>
-            <li class="{{ 'subcategory1'|is_active }}">
-                <a href="{{ path('subcategory1') }}">Subcategory 1</a>
+            <li class="{{ 'subcategory1_route_name'|is_active }}">
+                <a href="{{ path('subcategory1_route_name') }}">Subcategory 1</a>
             </li>
-            <li class="{{ 'subcategory2'|is_active }}">
-                <a href="{{ path('subcategory2') }}">Subcategory 2</a>
+            <li class="{{ 'subcategory2_route_name'|is_active }}">
+                <a href="{{ path('subcategory2_route_name') }}">Subcategory 2</a>
             </li>
         </ul>
     </li>
 </ul>
 ```
 
-If the current route is `subcategory1`, it has `current active` class 
-and its parent item with `all_categories` route has only `active` class.
+If the current route is `subcategory1_route_name`, it will have `current active` class
+and its parent item - `all_categories` route - will have only `active` class.
 
-And same for request URIs with `is_active_uri()` Twig function.
+And same for request URIs with `is_active_uri()` Twig function, but instead of passing
+an array of routes, pass the array of URIs.
 
 ## Demo page
 
@@ -81,8 +82,8 @@ bw_active_menu_item:
     prefix:   /bw/demo/active-menu-item
 ```
 
-Run built in server `php bin/console server:run` and demo page will be available
-at http://localhost:8000/bw/demo/active-menu-item/index.
+Run built in server `symfony serve` (or `php bin/console server:run`) and demo page
+will be available at http://localhost:8000/bw/demo/active-menu-item/index.
  
 ## Under the hood
 
