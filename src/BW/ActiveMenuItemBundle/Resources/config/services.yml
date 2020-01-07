@@ -8,6 +8,6 @@ services:
 
     bw_active_menu_item.twig.bw_extension:
         class: BW\ActiveMenuItemBundle\Twig\BWExtension
-        arguments: []
+        arguments: ['@request_stack']
         tags:
             - { name: twig.extension }
