@@ -16,7 +16,7 @@
         "twig/twig": "^2.0|^3.0"
     },
     "autoload": {
-        "psr-4": { "BW\\ActiveMenuItemBundle": "src" }
+        "psr-4": { "BW\\ActiveMenuItemBundle\\": "src" }
     },
     "extra": {
         "branch-alias": {
