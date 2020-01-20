@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class BWExtension extends \Twig_Extension
 {
     /**
-     * @var \Symfony\Component\HttpFoundation\Request
+     * @var Request
      */
     protected $request;
 
