@@ -11,7 +11,7 @@ use Twig\TwigFunction;
 class BWExtension extends AbstractExtension
 {
     /**
-     * @var \Symfony\Component\HttpFoundation\Request
+     * @var Request
      */
     protected $request;
 

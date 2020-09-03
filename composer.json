@@ -1,14 +1,14 @@
 {
     "name": "bw/active-menu-item-bundle",
     "type": "library",
-    "description": "The active menu item highlight of simple HTML menu for Symfony framework",
+    "description": "The active menu item highlighting of simple HTML menu in Symfony applications",
     "keywords": ["bw", "active", "menu", "item", "highlight"],
     "homepage": "https://github.com/bocharsky-bw/ActiveMenuItemBundle",
     "license": "MIT",
     "authors": [
         {
-            "name": "Bocharsky Victor",
-            "email": "mail@brainforce.kiev.ua"
+            "name": "Victor Bocharsky",
+            "email": "bocharsky.bw@gmail.com"
         }
     ],
     "require": {
@@ -18,9 +18,21 @@
     "autoload": {
         "psr-4": { "BW\\ActiveMenuItemBundle\\": "src" }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.1.x-dev"
+    "autoload-dev": {
+        "psr-4": {
+            "BW\\ActiveMenuItemBundle\\Tests\\": "tests/"
         }
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/framework-bundle": "^3.4",
+        "symfony/twig-bundle": "^3.4",
+        "twig/twig": "^2.0"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^3.4"
+    },
+    "config": {
+        "sort-packages": true
     }
 }
