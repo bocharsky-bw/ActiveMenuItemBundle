@@ -4,8 +4,11 @@ namespace BW\ActiveMenuItemBundle\Twig;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 
-class BWExtension extends \Twig_Extension
+class BWExtension extends AbstractExtension
 {
     /**
      * @var Request
@@ -31,16 +34,16 @@ class BWExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('is_active', array($this, 'isActiveFunction')),
-            new \Twig_SimpleFunction('is_active_uri', array($this, 'isActiveUriFunction')),
+            new TwigFunction('is_active', array($this, 'isActiveFunction')),
+            new TwigFunction('is_active_uri', array($this, 'isActiveUriFunction')),
         );
     }
 
     public function getFilters()
     {
         return array(
-            new \Twig_SimpleFilter('is_active', array($this, 'isActiveFilter')),
-            new \Twig_SimpleFilter('is_active_uri', array($this, 'isActiveUriFilter')),
+            new TwigFilter('is_active', array($this, 'isActiveFilter')),
+            new TwigFilter('is_active_uri', array($this, 'isActiveUriFilter')),
         );
     }
 
