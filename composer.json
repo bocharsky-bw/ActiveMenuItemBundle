@@ -25,9 +25,9 @@
     },
     "require": {
         "php": ">=5.5.9",
-        "symfony/framework-bundle": "^5.4",
-        "symfony/twig-bundle": "^5.4",
-        "twig/twig": "^3.0"
+        "symfony/framework-bundle": "^4.4|^5.4|^6.0",
+        "symfony/twig-bundle": "^4.4|^5.4|^6.0",
+        "twig/twig": "^2.0|^3.0"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^3.4"
